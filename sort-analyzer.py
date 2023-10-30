@@ -33,5 +33,23 @@ print(fewUniqueData[0:50])
 # EXAMPLE OF HOW TO TIME DURATION OF A SORT ALGORITHM
 # startTime = time.time()
 # bubbleSort(randomData)
+def selectionSort(arr, n):
+
+    for i in range (n):
+        min_index = i
+
+        for j in range(i + 1, n):
+
+            if arr[j] < arr[min_index]:
+                min_index = j
+        
+        (arr[i], arr[min_index]) = (arr[min_index], arr[i])
+
+n = len(fewUniqueData)
+startTime = time.time()
+selectionSort(fewUniqueData, n)
+endTime = time.time()
+print(f"Selection Sort Random Data: {endTime - startTime} seconds")
+
 # endTime = time.time()
 # print(f"Bubble Sort Random Data: {endTime - startTime} seconds")
